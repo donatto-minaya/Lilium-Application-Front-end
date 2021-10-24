@@ -1,0 +1,27 @@
+button {
+    color: red;
+}
+
+.btn {
+
+}
+
+.btn[transparent] {
+
+}
+
+.btn-ghostly {
+    border: 1px solid var(--default-shadow-gray);
+}
+
+.btn.primary {
+
+}
+
+.btn.warning {
+
+}
+
+.btn.danger {
+
+}

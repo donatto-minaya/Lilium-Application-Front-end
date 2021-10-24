@@ -1,0 +1,43 @@
+#nav {
+    font-family: 'Zen Maru Gothic';
+    color: var(--default-black);
+    width: 100%;
+    font-size: 20px;
+}
+
+.f-container {
+    width: 80%;
+    display: flex;
+    margin: auto;
+}
+
+#nav .left .company {
+    display: flex;
+    align-items: center;
+    width: 50%;
+}
+
+#nav .f-container > div {
+    width: 50%;
+}
+
+.logo img {
+    width: 70px;
+}
+
+#nav .left .name {
+    font-weight: bold;
+}
+
+#nav .right {
+    display: flex;
+}
+
+.right .action-links {
+    display: flex;
+    align-items: center;
+}
+
+.action-links > div {
+    margin: 1em;
+}
