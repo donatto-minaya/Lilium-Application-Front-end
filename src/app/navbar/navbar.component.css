@@ -2,7 +2,9 @@
     font-family: 'Zen Maru Gothic';
     color: var(--default-black);
     width: 100%;
-    font-size: 20px;
+    font-size: 16px;
+    box-shadow: 0 0 10px var(--default-shadow-gray);
+    display: flex;
 }
 
 .f-container {
@@ -26,11 +28,13 @@
 }
 
 #nav .left .name {
+    font-size: 20px;
     font-weight: bold;
 }
 
 #nav .right {
     display: flex;
+    justify-content: end;
 }
 
 .right .action-links {
@@ -39,5 +43,10 @@
 }
 
 .action-links > div {
-    margin: 1em;
+    margin: .5em;
+}
+
+.action-links > div a:hover {
+    color: black;
+    border-bottom: 1px solid var(--default-shadow-gray);
 }

@@ -1,0 +1,20 @@
+#footer {
+    color: var(--default-white);
+    background-color: var(--blue-dark);
+    width: 100%;
+    min-height: 300px;
+}
+
+#footer-central {
+    width: 80%;
+    margin: auto;
+}
+
+#footer-header {
+    display: flex;
+}
+
+#footer-header .block-service {
+    width: 30%;
+    margin: 1em auto;
+}

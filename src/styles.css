@@ -1,6 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@300&display=swap'); 
 /* Zen Maru Gothic */
 @import url('app/css/buttons.css');
+@import url('app/css/headers.css');
+
+html, body {
+    font-family: 'Zen Maru Gothic';
+}
+
+:root {
+    --blue-dark: rgb(2, 49, 67);
+}
 
 :root {
     --default-white: #f2f2f2;
