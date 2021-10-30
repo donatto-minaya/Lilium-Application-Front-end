@@ -2,6 +2,7 @@
 /* Zen Maru Gothic */
 @import url('app/css/buttons.css');
 @import url('app/css/headers.css');
+@import url('app/css/formSuscription.css');
 
 html, body {
     font-family: 'Zen Maru Gothic';

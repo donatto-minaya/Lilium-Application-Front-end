@@ -1,0 +1,18 @@
+form .block-form {
+    margin: 1em 0;
+    display: flex;
+}
+
+.block-form input {
+    outline: none;
+    border: 1px solid var(--default-shadow-gray);
+    padding: 1em .3em;
+    border-radius: 4px;
+    margin: 0 1em;
+}
+
+.block-form fa-icon {
+    font-size: 20px;
+    align-self: center;
+    color: var(--blue-dark);
+}

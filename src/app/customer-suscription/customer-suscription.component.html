@@ -1,1 +1,51 @@
-<app-customer-suscription-form></app-customer-suscription-form>
+<form novalidate #form="ngForm" (submit)="onSubmit(form)"> 
+    <label for="">id</label>
+    <input placeholder="id" type="text" name="user_id" #user_id="ngModel" [(ngModel)]="service.formData.user_id"/>
+    <!--  [value]="service.formData.user_id"  -->
+    <div class="block-form">
+        <label>Rol</label>
+        <input type="text" name="rol_id" placeholder="rol" 
+        #rol_id="ngModel" [(ngModel)]="service.formData.rol_id">
+    </div>
+
+    <div class="block-form">
+        <fa-icon [icon]="faUser"></fa-icon>
+        <input type="text" value="1" name="user_name" id="" placeholder="Nombre" 
+        #user_name="ngModel" [(ngModel)]="service.formData.user_name">
+    </div>
+
+    <div class="block-form">
+        <fa-icon [icon]="faUser"></fa-icon>
+        <input type="text" name="user_lastname" id="" placeholder="Apellido" 
+        #user_lastname="ngModel" [(ngModel)]="service.formData.user_lastname">
+    </div>
+
+    <div class="block-form">
+        <label>Edad</label>
+        <input type="text" name="user_age" id="" placeholder="Edad" 
+        #user_age="ngModel" [(ngModel)]="service.formData.user_age">
+    </div>
+
+    <div class="block-form">
+        <fa-icon [icon]="faPhone"></fa-icon>
+        <input type="text" name="user_phone" id="" placeholder="telefono" 
+        #user_phone="ngModel" [(ngModel)]="service.formData.user_phone">
+    </div>
+
+    <div class="block-form">
+        <fa-icon [icon]="faAddressCard"></fa-icon>
+        <input type="text" name="user_email" id="" placeholder="Correo" 
+        #user_email="ngModel" [(ngModel)]="service.formData.user_email">
+    </div>
+
+    <div class="block-form">
+        <fa-icon [icon]="faLock"></fa-icon>
+        <input type="text" name="user_password" id="" placeholder="Clave" 
+        #user_password="ngModel" [(ngModel)]="service.formData.user_password">
+    </div>
+
+    <div class="block-form">
+        <button type="submit" [disabled]="form.invalid">Agrgar Cliente</button>
+    </div>
+</form>
+

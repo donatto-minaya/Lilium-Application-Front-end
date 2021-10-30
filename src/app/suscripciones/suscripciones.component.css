@@ -1,0 +1,28 @@
+#tabla-suscripciones {
+    display: flex;
+    width: 80%;
+    margin: auto;
+}
+
+.suscripcion {
+    width: 30%;
+    margin: 1em auto;
+}
+
+#tabla-suscripciones fa-icon {
+    color: green;
+}
+
+.descripcion-suscripcion .detail {
+    display: flex;
+    margin: 1em 0 0 1em;
+}
+
+.descripcion-suscripcion .detail .texto {
+    margin: 0 10px;
+}
+
+.action-link {
+    width: 90%;
+    margin: .5em 0;
+}

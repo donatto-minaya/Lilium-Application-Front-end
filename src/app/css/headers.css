@@ -1,3 +1,15 @@
+.header-h1 {
+    font-size: 2em;
+}
+
+.header-h2 {
+    font-size: 1.5em;
+}
+
+.header-h3 {
+    font-size: 1.17em;
+}
+
 .footer-title-header-service { /* Fake h3 */
     font-size: 1.17em;
     font-weight: bold;
