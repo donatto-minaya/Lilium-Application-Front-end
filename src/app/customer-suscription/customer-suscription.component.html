@@ -1,51 +1,82 @@
-<form novalidate #form="ngForm" (submit)="onSubmit(form)"> 
-    <label for="">id</label>
-    <input placeholder="id" type="text" name="user_id" #user_id="ngModel" [(ngModel)]="service.formData.user_id"/>
-    <!--  [value]="service.formData.user_id"  -->
-    <div class="block-form">
-        <label>Rol</label>
-        <input type="text" name="rol_id" placeholder="rol" 
-        #rol_id="ngModel" [(ngModel)]="service.formData.rol_id">
-    </div>
+<div id="form-template">
+    <form novalidate #form="ngForm" (submit)="onSubmit(form)"> 
+        <div class="redes">
+            <span>Usa una de tus redes redes</span>
+            <div class="grid-3">
+                <div class="block-form crear-con-red">
+                    <button class="btn btn-ghostly" transparent>
+                        <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github" style="width: 20px !important;">
+                        <span>Github</span>
+                    </button>
+                </div>
+    
+                <div class="block-form crear-con-red">
+                    <button class="btn btn-ghostly" transparent>
+                        <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/google_original_logo_icon_146496.png" alt="gmail" style="width: 20px !important;">
+                        <span>Gmail</span>
+                    </button>
+                </div>
+    
+                <div class="block-form crear-con-red">
+                    <button class="btn btn-ghostly" transparent>
+                        <img src="https://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png" alt="twitter" style="width: 30px !important;">
+                        <span>Twitter</span>
+                    </button>
+                </div>
+            </div>
+        </div>
 
-    <div class="block-form">
-        <fa-icon [icon]="faUser"></fa-icon>
-        <input type="text" value="1" name="user_name" id="" placeholder="Nombre" 
-        #user_name="ngModel" [(ngModel)]="service.formData.user_name">
-    </div>
+        <div class="redes">
+            <span>O usa tu correo electrónico</span>
+            <div class="grid-3">
+                <div class="block-form">
+                    <fa-icon [icon]="faUser"></fa-icon>
+                    <input type="text" name="user_name" id="nombre" placeholder="Nombre" 
+                    #user_name="ngModel" [(ngModel)]="service.formData.user_name">
+                </div>
+            
+                <div class="block-form">
+                    <fa-icon [icon]="faUser"></fa-icon>
+                    <input type="text" name="user_lastname" id="apellido" placeholder="Apellido" 
+                    #user_lastname="ngModel" [(ngModel)]="service.formData.user_lastname" >
+                </div>
+            
+        
+                <div class="block-form">
+                    <fa-icon [icon]="faPortrait"></fa-icon>
+                    <input type="text" name="user_age" id="edad" placeholder="Edad" maxlength="2"
+                    #user_age="ngModel" [(ngModel)]="service.formData.user_age">
+                </div>
+            </div>
+        
+            <div class="grid-2">
+                <div class="block-form">
+                    <fa-icon [icon]="faPhone"></fa-icon>
+                    <input type="text" name="user_phone" id="telefono" placeholder="telefono" 
+                    #user_phone="ngModel" [(ngModel)]="service.formData.user_phone">
+                </div>
+            
+                <div class="block-form">
+                    <fa-icon [icon]="faAddressCard"></fa-icon>
+                    <input type="text" name="user_email" id="correo" placeholder="Correo" 
+                    #user_email="ngModel" [(ngModel)]="service.formData.user_email" >
+                </div>
+            </div>
+        
+            <div class="block-form">
+                <fa-icon [icon]="faLock"></fa-icon>
+                <input type="text" name="user_password" id="clave" placeholder="Clave" 
+                #user_password="ngModel" [(ngModel)]="service.formData.user_password">
+            </div>
+        </div>
+    
+        <div class="block-form">
+            <button (click)="accountCreated()" type="submit" [disabled]="form.invalid" class="btn primary btn-wm btn-pd-t-m">Registrate ahora</button>
+        </div>
 
-    <div class="block-form">
-        <fa-icon [icon]="faUser"></fa-icon>
-        <input type="text" name="user_lastname" id="" placeholder="Apellido" 
-        #user_lastname="ngModel" [(ngModel)]="service.formData.user_lastname">
-    </div>
-
-    <div class="block-form">
-        <label>Edad</label>
-        <input type="text" name="user_age" id="" placeholder="Edad" 
-        #user_age="ngModel" [(ngModel)]="service.formData.user_age">
-    </div>
-
-    <div class="block-form">
-        <fa-icon [icon]="faPhone"></fa-icon>
-        <input type="text" name="user_phone" id="" placeholder="telefono" 
-        #user_phone="ngModel" [(ngModel)]="service.formData.user_phone">
-    </div>
-
-    <div class="block-form">
-        <fa-icon [icon]="faAddressCard"></fa-icon>
-        <input type="text" name="user_email" id="" placeholder="Correo" 
-        #user_email="ngModel" [(ngModel)]="service.formData.user_email">
-    </div>
-
-    <div class="block-form">
-        <fa-icon [icon]="faLock"></fa-icon>
-        <input type="text" name="user_password" id="" placeholder="Clave" 
-        #user_password="ngModel" [(ngModel)]="service.formData.user_password">
-    </div>
-
-    <div class="block-form">
-        <button type="submit" [disabled]="form.invalid">Agrgar Cliente</button>
-    </div>
-</form>
-
+        <div class="block-form">
+            <span>Ya tienes cuenta?</span> <a routerLink="/sesion" class="link">Inicia sesión</a>
+        </div>
+    </form>
+    
+</div>

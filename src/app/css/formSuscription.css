@@ -1,18 +1,74 @@
 form .block-form {
-    margin: 1em 0;
+    margin: 1em;
     display: flex;
 }
 
 .block-form input {
+    width: 100%;
     outline: none;
+    background-color: #f7f7f7;
     border: 1px solid var(--default-shadow-gray);
-    padding: 1em .3em;
+    padding: .7em .5em;
     border-radius: 4px;
-    margin: 0 1em;
+    margin: 0 0 0 1em;
+}
+
+.block-form input:focus {
+    border: 1px solid var(--shadow-gray-clear);
+    background-color: #fafafa;
 }
 
 .block-form fa-icon {
     font-size: 20px;
     align-self: center;
     color: var(--blue-dark);
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+#form-template {
+    border-radius: 12px;
+    width: 45%;
+    margin: 2em auto;
+    padding: 2em 1em;
+    background-color: var(--white-clear);
+    box-shadow: 0 0 10px -3px var(--shadow-gray-clear);
+}
+
+.block-form span {
+    margin: 0 5px 0 0;
+}
+
+a.link {
+    color: var(--orange-clear);
+    font-weight: bold;
+}
+
+.redes {
+    margin: 1em 0;
+}
+
+.redes > span {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 1em;
+}
+
+.crear-con-red button span {
+    margin-inline-start: 5px;
+}
+
+.crear-con-red button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

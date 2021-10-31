@@ -21,7 +21,7 @@ html, body {
     --default-yellow: #F0F0A8;
     --default-pink: #F2A999;
     --default-red: #F28177;
-    --default-shadow-gray: #a6a6a6;
+    --default-shadow-gray: #d9d9d9;
 
 }
 
@@ -30,6 +30,7 @@ html, body {
     --white-clear: #fafafa;
     --orange-clear: #ffc999;
     --yellow-clear: #ffff80;
+    --shadow-gray-clear: #a6a6a6;
 }
 
 body {

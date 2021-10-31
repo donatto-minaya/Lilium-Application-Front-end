@@ -18,6 +18,10 @@
     padding: .7em .3em;
 }
 
+.btn-pd-t-m {
+    padding: 1em .3em;
+}
+
 .btn-pd-l {
     padding: .3em .7em;
 }
@@ -33,7 +37,7 @@
 }
 
 .btn-ghostly:hover {
-    border: 1px solid var(--default-black) !important;
+    border: 1px solid var(--shadow-gray-clear) !important;
 }
 
 .btn.primary {

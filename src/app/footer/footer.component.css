@@ -5,6 +5,11 @@
     min-height: 300px;
 }
 
+.footer-title-header-service {
+    font-size: 1.30em;
+    font-weight: bold;
+}
+
 #footer-central {
     width: 80%;
     margin: auto;
@@ -18,3 +23,13 @@
     width: 30%;
     margin: 1em auto;
 }
+
+.description {
+    color: #aabbca;
+}
+
+.description .service {
+    margin: 1em 0;
+    font-size: 16px;
+}
+
