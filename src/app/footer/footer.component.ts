@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 
+
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -8,9 +9,6 @@ import { faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 })
 export class FooterComponent implements OnInit {
   faMapMarkerAlt = faMapMarkerAlt;
-  
-  title = 'Lilium';
-
   constructor() { }
 
   ngOnInit(): void {

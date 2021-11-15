@@ -28,7 +28,7 @@
 
         <div class="redes">
             <span>O usa tu correo electrónico</span>
-            <div class="grid-3">
+            <div class="grid-2">
                 <div class="block-form">
                     <fa-icon [icon]="faUser"></fa-icon>
                     <input type="text" name="user_name" id="nombre" placeholder="Nombre" 
@@ -40,33 +40,21 @@
                     <input type="text" name="user_lastname" id="apellido" placeholder="Apellido" 
                     #user_lastname="ngModel" [(ngModel)]="service.formData.user_lastname" >
                 </div>
-            
-        
-                <div class="block-form">
-                    <fa-icon [icon]="faPortrait"></fa-icon>
-                    <input type="text" name="user_age" id="edad" placeholder="Edad" maxlength="2"
-                    #user_age="ngModel" [(ngModel)]="service.formData.user_age">
-                </div>
             </div>
         
-            <div class="grid-2">
-                <div class="block-form">
-                    <fa-icon [icon]="faPhone"></fa-icon>
-                    <input type="text" name="user_phone" id="telefono" placeholder="telefono" 
-                    #user_phone="ngModel" [(ngModel)]="service.formData.user_phone">
-                </div>
             
+            <div class="grid-2">
                 <div class="block-form">
                     <fa-icon [icon]="faAddressCard"></fa-icon>
                     <input type="text" name="user_email" id="correo" placeholder="Correo" 
                     #user_email="ngModel" [(ngModel)]="service.formData.user_email" >
                 </div>
-            </div>
         
-            <div class="block-form">
-                <fa-icon [icon]="faLock"></fa-icon>
-                <input type="text" name="user_password" id="clave" placeholder="Clave" 
-                #user_password="ngModel" [(ngModel)]="service.formData.user_password">
+                <div class="block-form">
+                    <fa-icon [icon]="faLock"></fa-icon>
+                    <input type="text" name="user_password" id="clave" placeholder="Clave" 
+                    #user_password="ngModel" [(ngModel)]="service.formData.user_password">
+                </div>
             </div>
         </div>
     
@@ -75,7 +63,7 @@
         </div>
 
         <div class="block-form">
-            <span>Ya tienes cuenta?</span> <a routerLink="/sesion" class="link">Inicia sesión</a>
+            <span>Ya tienes cuenta?</span> <a routerLink="/login" class="link">Inicia sesión</a>
         </div>
     </form>
     

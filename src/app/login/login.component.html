@@ -1,0 +1,22 @@
+<div id="form-template">
+    <form novalidate>
+        <div class="redes">
+            <div class="block-form">
+                <fa-icon [icon]="faUser"></fa-icon>
+                <input type="text" name="email" [(ngModel)]="user.email" placeholder="Coloca tu correo electrónico">
+            </div>
+            <div class="block-form">
+                <fa-icon [icon]="faLock"></fa-icon>
+                <input type="text" name="password" [(ngModel)]="user.password" placeholder="Tu clave">
+            </div>
+        </div>
+    
+        <div class="block-form">
+            <button (click)="login()" class="btn primary btn-wm btn-pd-t-m">Ingresar ahora</button>
+        </div>
+    
+        <div class="block-form">
+            <span>Aún no tienes cuenta?</span> <a routerLink="" class="link">Registrate Aquí</a>
+        </div>
+    </form>
+</div>

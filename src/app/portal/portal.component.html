@@ -1,0 +1,49 @@
+<div id="portal-content">
+    <div id="portal-central">
+        <div id="jobs">
+            <div class="job" *ngFor="let job of service.list" (click)="populateJob(job)" onclick="this.className += ' job-selected'">
+                <div class="image">
+
+                </div>
+                <div class="job-content">
+                    <div class="title">
+                        <p>{{ job.titulo }}</p>
+                    </div>
+    
+                    <div class="job-description">
+                        <p>{{ job.empresa }}</p>
+                        <p class="fechaCreacion">{{ job.fechaCreacion }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="job-description">
+            <div class="tituloTrabajo">
+                <input type="text" #title="ngModel" [(ngModel)]="service.formData.titulo">
+            </div>
+            
+            <div class="descripcionTrabajo">
+                <div class="texto">
+                    <fa-icon [icon]="faBriefcase"></fa-icon>
+                    Jornada <input #descripcion="ngModel" [(ngModel)]="service.formData.tipoJornada">
+                </div>
+                <div class="texto">
+                    <input type="text" #descripcionNegocio="ngModel" [(ngModel)]="service.formData.descripcionNegocio">
+                </div>
+                <div class="texto">
+                    <textarea name="" id="" cols="30" rows="10" #descripcion="ngModel" [(ngModel)]="service.formData.descripcion"></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form #form="ngForm" (submit)="onSubmit(form)">
+    <input type="text" name="title" #title="ngModel" [(ngModel)]="service.formData2.title">
+    <input type="text" name="company_id" #company_id="ngModel" [(ngModel)]="service.formData2.company_id">
+    <input type="text" name="description" #description="ngModel" [(ngModel)]="service.formData2.description">
+    <input type="text" name="tipoJornadaId" #tipoJornadaId="ngModel" [(ngModel)]="service.formData2.tipoJornadaId">
+    <button type="submit">Agregar</button>
+ </form>
+

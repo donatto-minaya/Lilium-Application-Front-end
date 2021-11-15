@@ -5,6 +5,9 @@
     font-size: 16px;
     box-shadow: 0 0 10px var(--default-shadow-gray);
     display: flex;
+    position: sticky;
+    top: 0;
+    background-color: var(--white-clear);
 }
 
 .f-container {
@@ -19,8 +22,12 @@
     width: 50%;
 }
 
-#nav .f-container > div {
-    width: 50%;
+#nav .f-container .left {
+    width: 30%;
+}
+
+#nav .f-container .right {
+    width: 70%;
 }
 
 .logo img {
@@ -49,4 +56,8 @@
 .action-links > div a:hover {
     color: black;
     border-bottom: 1px solid var(--default-shadow-gray);
+}
+
+#nav a {
+    color: var(--default-black);
 }

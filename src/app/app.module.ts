@@ -1,8 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms';
-
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
@@ -13,25 +9,39 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome'
 import { AppRoutingModule } from './app-routing.module';
 import { ProfesionalSuscriptionComponent } from './profesional-suscription/profesional-suscription.component';
 import { CompanySuscriptionComponent } from './company-suscription/company-suscription.component';
+import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './home/home.component';
+import { PrincipalComponent } from './principal/principal.component';
+import { PortalComponent } from './portal/portal.component';
+import { NavbarPremiumComponent } from './navbar-premium/navbar-premium.component';
+import { FormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser';
+import {AuthGuard} from './auth.guard'
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    FooterComponent,
     CustomerSuscriptionComponent,
     SuscripcionesComponent,
     ProfesionalSuscriptionComponent,
-    CompanySuscriptionComponent
+    CompanySuscriptionComponent,
+    LoginComponent,
+    HomeComponent,
+    PrincipalComponent,
+    FooterComponent,
+    PortalComponent,
+    NavbarPremiumComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     FontAwesomeModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
-  providers: [],
+
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

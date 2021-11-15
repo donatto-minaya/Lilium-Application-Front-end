@@ -4,6 +4,34 @@
 @import url('app/css/headers.css');
 @import url('app/css/formSuscription.css');
 
+app-root {
+    display: flex;
+    align-items: baseline;
+    min-height: 100vh;
+    flex-wrap: wrap;
+}
+
+app-navbar {
+    position: sticky;
+    top: 0;
+    background-color: var(--default-white);
+}
+
+app-navbar, app-login, app-suscripciones, app-footer, app-profesional-suscription,
+app-customer-suscription, app-home, app-portal, app-company-suscription,
+app-navbar-premium {
+    width: 100%;
+}
+
+app-customer-suscription, app-login, app-company-suscription, app-profesional-suscription {
+    display: flex;
+    align-items: center;
+}
+
+app-footer {
+    align-self: end;
+}
+
 html, body {
     font-family: 'Zen Maru Gothic';
 }
@@ -31,6 +59,7 @@ html, body {
     --orange-clear: #ffc999;
     --yellow-clear: #ffff80;
     --shadow-gray-clear: #a6a6a6;
+    --blue-clear: #3472a8;
 }
 
 body {

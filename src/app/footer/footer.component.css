@@ -2,7 +2,7 @@
     color: var(--default-white);
     background-color: var(--blue-dark);
     width: 100%;
-    min-height: 300px;
+    min-height: 250px;
 }
 
 .footer-title-header-service {
@@ -32,4 +32,3 @@
     margin: 1em 0;
     font-size: 16px;
 }
-

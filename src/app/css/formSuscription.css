@@ -72,3 +72,43 @@ a.link {
     justify-content: center;
     align-items: center;
 }
+
+#formularios {
+    display: flex;
+}
+
+#formulario {
+    width: 100%;
+}
+
+#formulario-credito {
+    width: 15%;
+    position: absolute;
+    right: 10em;
+    background-color: var(--default-blue);
+    border-radius: 8px;
+    box-shadow: 0 0 10px 2px var(--shadow-gray-clear);
+    padding: 1em 0;
+    height: 300px;
+}
+
+#formulario-credito input {
+    width: 80%;
+    margin: 1em auto;
+    padding: 1em;
+    color: var(--default-white);
+    background-color: var(--default-blue);
+    outline: none;
+    border: 0;
+    border-bottom: 1px solid var(--default-shadow-gray);
+}
+
+.imagen-tarjeta {
+    margin-top: -16px;
+    width: 100%;
+}
+
+.imagen-tarjeta img {
+    border-radius: 8px 8px 0 0;
+}
+

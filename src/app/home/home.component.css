@@ -1,0 +1,26 @@
+.background {
+    height: calc(100vh - 74px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url("https://www.atrevaresiduos.es/media/images/upload/empresa-residuo-edificios-madrid11.jpg");
+}
+
+.fake-dim {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0,.3);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.title {
+    font-size: 3em;
+    color: white;
+}
+
+.reference {
+    font-size: 1.7em;
+    color: var(--default-white);
+}

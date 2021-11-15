@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
+
 import { CustomerSuscriptionService } from 'src/app/shared/customer-suscription.service';
 import { faUser, faPhone, faAddressCard, faLock, faPortrait } from '@fortawesome/free-solid-svg-icons';
 import Swal from 'sweetalert2';
+import { NgForm } from '@angular/forms';
+
 
 
 @Component({
@@ -59,7 +61,7 @@ export class CustomerSuscriptionComponent implements OnInit {
   onSubmit(form:NgForm) {
     this.service.postCustomer().subscribe(
       res => {
-        
+        console.log(res);
       },
       err => {
         console.log(err);

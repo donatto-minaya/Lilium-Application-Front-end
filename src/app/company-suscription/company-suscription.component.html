@@ -1,1 +1,79 @@
-<p>company-suscription works!</p>
+<div id="form-template">
+    <form novalidate #form="ngForm" (submit)="onSubmit(form)"> 
+        <div id="formularios">
+            <div id="formulario">
+                <div class="redes">
+                    <span>Usa una de tus redes</span>
+                    <div class="grid-2">
+                        <div class="block-form crear-con-red">
+                            <button class="btn btn-ghostly btn-pd-t" transparent>
+                                <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" alt="github" style="width: 20px !important;">
+                                <span>Github</span>
+                            </button>
+                        </div>
+            
+                        <div class="block-form crear-con-red">
+                            <button class="btn btn-ghostly" transparent>
+                                <img src="https://cdn.icon-icons.com/icons2/2415/PNG/512/google_original_logo_icon_146496.png" alt="gmail" style="width: 20px !important;">
+                                <span>Gmail</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="redes">
+                    <span>O usa un correo electrónico</span>
+                    <div class="grid-2">
+                        <div class="block-form">
+                            <fa-icon [icon]="faUser"></fa-icon>
+                            <input type="text" name="company_name" id="empresa" placeholder="Empresa" 
+                            #company_name="ngModel" [(ngModel)]="service.formData.company_name">
+                        </div>            
+                
+                        <div class="block-form">
+                            <fa-icon [icon]="faPortrait"></fa-icon>
+                            <input type="text" name="company_age" id="edad" placeholder="Tiempo de la compañia en años (opcional)" maxlength="2"
+                            #company_age="ngModel" [(ngModel)]="service.formData.company_age">
+                        </div>
+                    </div>
+                
+                    <div class="grid-2">
+                        <div class="block-form">
+                            <fa-icon [icon]="faPhone"></fa-icon>
+                            <input type="text" name="company_phone" id="telefono" placeholder="Telefono de la empresa (opcional)" 
+                            #company_phone="ngModel" [(ngModel)]="service.formData.company_phone">
+                        </div>
+                    
+                        <div class="block-form">
+                            <fa-icon [icon]="faAddressCard"></fa-icon>
+                            <input type="text" name="company_email" id="correo" placeholder="Correo de la empresa" 
+                            #company_email="ngModel" [(ngModel)]="service.formData.company_email" >
+                        </div>
+                    </div>
+                
+                    <div class="block-form">
+                        <fa-icon [icon]="faLock"></fa-icon>
+                        <input type="text" name="company_password" id="clave" placeholder="Contraseña" 
+                        #company_password="ngModel" [(ngModel)]="service.formData.company_password">
+                    </div>
+                </div>
+            </div>
+    
+            <div id="formulario-credito">
+                <div class="imagen-tarjeta">
+                    <img src="https://slottikuningas.net/wp-content/uploads/2021/06/Paypal-nettikasinot.jpg" alt="">
+                </div>
+                <input type="text" name="company_paypal_email" id="clave" placeholder="Correo Paypal" 
+                #company_paypal_email="ngModel" [(ngModel)]="service.formData.company_paypal_email">
+            </div>
+        </div>
+    
+        <div class="block-form">
+            <button (click)="accountCreated()" type="submit" [disabled]="form.invalid" class="btn primary btn-wm btn-pd-t-m">Registrate ahora</button>
+        </div>
+
+        <div class="block-form">
+            <span>Ya tienes cuenta?</span> <a routerLink="/login" class="link">Inicia sesión</a>
+        </div>
+    </form>
+</div>
