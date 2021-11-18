@@ -1,0 +1,10 @@
+#content-profile {
+    width: 80%;
+    display: flex;
+    margin: 1em auto;
+}
+
+#content-profile > div {
+    width: 30%;
+    margin: 0 10px;
+}

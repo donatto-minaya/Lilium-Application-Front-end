@@ -1,0 +1,29 @@
+<div id="content-profile">
+    <div id="profile-description">
+        <div class="tip">
+            Puedes contactar a este usuario con este correo
+            <p>{{ user.email }}</p>
+        </div>
+    </div>
+    
+    <div id="business-description">
+    
+    </div>
+    
+    <div id="advertisements">
+        <button class="btn">Ver todos</button>
+
+        <form #form="ngForm" (submit)="onSubmit(form)">
+            <input type="text" name="title" #title="ngModel" [(ngModel)]="service.formData.title">
+            <input type="hidden" name="company_id" #company_id="ngModel" [(ngModel)]="service.formData.company_id" >
+            <textarea rows="10" type="text" name="description" #description="ngModel" [(ngModel)]="service.formData.description"></textarea>
+            <!-- <input type="text" name="tipoJornadaId" #tipoJornadaId="ngModel" [(ngModel)]="service.formData.tipoJornadaId"> -->
+            <select name="jornada" #tipoJornadaId="ngModel" [(ngModel)]="service.formData.tipoJornadaId">
+                <option disabled [ngValue]="undefined">Tipo de Jornada</option>
+                <option *ngFor="let jornada of service.jornadas" [ngValue]="jornada.tipoJornadaId">{{jornada.jornada}}</option>
+            </select>
+            <button type="submit">Agregar</button>
+         </form>
+
+    </div>
+</div>

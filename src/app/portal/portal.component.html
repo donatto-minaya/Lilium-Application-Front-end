@@ -39,11 +39,3 @@
     </div>
 </div>
 
-<form #form="ngForm" (submit)="onSubmit(form)">
-    <input type="text" name="title" #title="ngModel" [(ngModel)]="service.formData2.title">
-    <input type="text" name="company_id" #company_id="ngModel" [(ngModel)]="service.formData2.company_id">
-    <input type="text" name="description" #description="ngModel" [(ngModel)]="service.formData2.description">
-    <input type="text" name="tipoJornadaId" #tipoJornadaId="ngModel" [(ngModel)]="service.formData2.tipoJornadaId">
-    <button type="submit">Agregar</button>
- </form>
-

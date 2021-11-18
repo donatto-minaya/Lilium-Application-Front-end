@@ -7,13 +7,15 @@ import { CustomerSuscriptionComponent } from './customer-suscription/customer-su
 import { PortalComponent } from './portal/portal.component';
 import { ProfesionalSuscriptionComponent } from './profesional-suscription/profesional-suscription.component';
 import {AuthGuard} from './auth.guard'
+import { ProfileComponent } from './profile/profile.component';
 
 const routes : Routes = [
-  {path:'company', component: CompanySuscriptionComponent},
   {path:'portal', component: PortalComponent, canActivate: [AuthGuard]},
+  {path:'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  {path:'login', component: LoginComponent},
+  {path:'company', component: CompanySuscriptionComponent},
   {path:'customer', component: CustomerSuscriptionComponent},
   {path:'profesional', component: ProfesionalSuscriptionComponent},
-  {path:'login', component: LoginComponent},
   {path:'', component: HomeComponent, pathMatch: 'full'}
 ]
 

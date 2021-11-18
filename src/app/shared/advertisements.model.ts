@@ -9,7 +9,7 @@ export class Advertisements {
 
     // Para el post
     title:string;
-    company_id:string;
+    company_id:string = JSON.stringify(JSON.parse(localStorage.getItem('id') || '{}'));
     description:string;
     tipoJornadaId:string;
     fechaCreada:string;

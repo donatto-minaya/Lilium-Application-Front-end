@@ -3,11 +3,11 @@
         <div class="redes">
             <div class="block-form">
                 <fa-icon [icon]="faUser"></fa-icon>
-                <input type="text" name="email" [(ngModel)]="user.email" placeholder="Coloca tu correo electrónico">
+                <input id="correoLogin" type="text" name="email" [(ngModel)]="user.email" placeholder="Coloca tu correo electrónico">
             </div>
             <div class="block-form">
                 <fa-icon [icon]="faLock"></fa-icon>
-                <input type="text" name="password" [(ngModel)]="user.password" placeholder="Tu clave">
+                <input id="claveLogin" type="password" name="password" [(ngModel)]="user.password" placeholder="Tu clave">
             </div>
         </div>
     

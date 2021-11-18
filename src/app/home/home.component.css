@@ -15,7 +15,7 @@
     text-align: center;
 }
 
-.title {
+.title-header {
     font-size: 3em;
     color: white;
 }
@@ -23,4 +23,50 @@
 .reference {
     font-size: 1.7em;
     color: var(--default-white);
+}
+
+.block-home {
+    min-height: 300px;
+}
+
+.block-home[white] {
+    background-color: var(--white-clear);
+}
+
+.block-container {
+    align-items: center;
+    display: flex;
+    width: 70%;
+    margin: 0 auto;
+}
+
+.block-container > div {
+    margin: 1em;
+}
+
+.block-container .img {
+    width: 30%;
+}
+
+.block-container .description {
+    width: 60%;
+    margin-inline-start: 1em;
+    text-align: justify;
+}
+
+.description div {
+    margin: 1em 0 ;
+}
+
+.description .title {
+    font-size: 2.2em;
+}
+
+.description span {
+    color: var(--orange-clear);
+}
+
+.description .text-reference {
+    color: var(--default-black);
+    font-size: 1.5em;
 }
