@@ -8,6 +8,7 @@ export class Advertisements {
     fechaCreacion:string;
 
     // Para el post
+    jobId:string;
     title:string;
     company_id:string = JSON.stringify(JSON.parse(localStorage.getItem('id') || '{}'));
     description:string;

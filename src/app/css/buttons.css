@@ -7,7 +7,7 @@
 }
 
 .btn[transparent] {
-    background-color: transparent !important;
+    background-color: transparent;
 }
 
 .btn-wm {
@@ -38,6 +38,11 @@
 
 .btn-ghostly:hover {
     border: 1px solid var(--shadow-gray-clear) !important;
+}
+
+.btn-ghostly:active {
+    background-color: var(--default-blue);
+    color: var(--default-white) !important;
 }
 
 .btn.primary {

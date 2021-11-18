@@ -20,17 +20,22 @@ export class ProfileComponent implements OnInit {
   
   ngOnInit(): void {
     this.service.obtenerJornadas();
+    this.service.obtenerAnunciosPorCuenta(JSON.stringify(JSON.parse(this.user.id || '{}')));
   }
 
   onSubmit(form: NgForm) {
     this.service.postAnuncio().subscribe(
       res => {
-        this.service.obtenerJornadas();
+        this.service.obtenerAnunciosPorCuenta(JSON.stringify(JSON.parse(this.user.id || '{}')));
       },
       err => {
         console.log(err);
       }
     );
+  } 
+
+  eliminarAnuncio(id:string) {
+    this.service.eliminarAnuncio(id)
   }
 
 }

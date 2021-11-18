@@ -15,6 +15,9 @@ export class ProfileService {
   jornadas: Jornadas[];
   formData:Advertisements = new Advertisements();
   
+  obtenerAnunciosPorCuenta(id:string) {
+    this.http.get(`${this.AdvertisementsURL}/${id}`).toPromise().then(res => this.list = res as Advertisements[])
+  }
 
   obtenerJornadas() {
     this.http.get(this.JornadasURL).toPromise().then(res => this.jornadas = res as Jornadas[])
@@ -22,6 +25,16 @@ export class ProfileService {
 
   postAnuncio() {
     return this.http.post(this.AdvertisementsURL, this.formData);    
+  }
+
+  eliminarAnuncio(id:string) {
+    fetch(`${this.AdvertisementsURL}/${id}`, {
+      method: 'DELETE'
+    })
+    .then(res => {
+      this.obtenerAnunciosPorCuenta(JSON.stringify(JSON.parse(localStorage.getItem('id') || '{}')));
+    })
+    .then(res => null)
   }
 }
 
