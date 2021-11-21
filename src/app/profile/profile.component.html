@@ -3,6 +3,7 @@
         <div class="tip">
             Puedes contactar a este usuario con este correo
             <p>{{ user.email }}</p>
+            <button class="btn btn-wm btn-pd-t" routerLink="/profile/edit">Configuración</button>
         </div>
     </div>
     
@@ -14,9 +15,9 @@
         <div class="advertisements-company">
             <div class="ad" *ngFor="let job of service.list">
                 <p>{{ job.title }}</p>
-                <p>{{ job.description }}</p>
-                <button>Editar</button>
-                <button (click)="eliminarAnuncio(job.jobId)">Eliminar</button>
+                <p>{{ job.description }}</p>                  
+                <button class="btn">Editar</button>
+                <button class="btn" (click)="eliminarAnuncio(job.jobId)">Eliminar</button>
             </div>
         </div>
         <button class="btn">Ver todos</button>

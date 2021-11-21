@@ -21,6 +21,7 @@ export class ProfileComponent implements OnInit {
   ngOnInit(): void {
     this.service.obtenerJornadas();
     this.service.obtenerAnunciosPorCuenta(JSON.stringify(JSON.parse(this.user.id || '{}')));
+    console.log(this.service.list);
   }
 
   onSubmit(form: NgForm) {
@@ -37,5 +38,4 @@ export class ProfileComponent implements OnInit {
   eliminarAnuncio(id:string) {
     this.service.eliminarAnuncio(id)
   }
-
 }

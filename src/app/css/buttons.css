@@ -15,20 +15,15 @@
 }
 
 .btn-pd-t {
-    padding: .7em .3em;
+    padding: .5em 1em;
 }
 
 .btn-pd-t-m {
-    padding: 1em .3em;
-}
-
-.btn-pd-l {
-    padding: .3em .7em;
+    padding: .8em 1em;
 }
 
 .btn[no-border] {
     border: 0;
-    border-radius: 0;
 }
 
 .btn-ghostly {
@@ -37,12 +32,24 @@
 }
 
 .btn-ghostly:hover {
-    border: 1px solid var(--shadow-gray-clear) !important;
+    border: 1px solid var(--shadow-gray-clear);
+    border-bottom: 1px solid var(--shadow-gray-clear) !important;
+}
+
+.btn-ghostly:hover[warning] {
+    border: 1px solid var(--default-red);
+    border-bottom: 1px solid var(--default-red) !important;
 }
 
 .btn-ghostly:active {
     background-color: var(--default-blue);
     color: var(--default-white) !important;
+}
+
+.btn-ghostly:active[warning] {
+    color: var(--default-white) !important;
+    background-color: var(--default-red);
+    border: 1px solid var(--red-clear) !important;
 }
 
 .btn.primary {

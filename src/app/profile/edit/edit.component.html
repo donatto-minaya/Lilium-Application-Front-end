@@ -1,1 +1,50 @@
-<p>edit works!</p>
+<div id="content-profile-edit">
+    <div id="principal-edit">
+        <form #form="ngForm" (submit)="onEdit(form)">
+            <input type="hidden" name="company_id2" #company_id2="ngModel" [(ngModel)]="service.formData.company_id" >
+
+            <div class="grid-3">
+                <div class="block-edit-profile">
+                    <label for="" class="date">Nombre</label>
+                    <input id="nombre_empresa" type="text" name="company_name" #company_name="ngModel" [(ngModel)]="service.formData.company_name">
+                </div>
+    
+                <div class="block-edit-profile">
+                    <label for="">Tiempo (Años)</label>
+                    <input id="edad_empresa" type="text" name="company_age" #company_age="ngModel" [(ngModel)]="service.formData.company_age">
+                </div>
+    
+                <div class="block-edit-profile">
+                    <label for="">Telefono</label>
+                    <input id="telefono_empresa" type="text" name="company_phone" #company_phone="ngModel" [(ngModel)]="service.formData.company_phone">
+                </div>
+            </div>
+
+            <div class="block-edit-profile">
+                <label for="">Correo</label>
+                <input id="correo_empresa" type="text" name="company_email" #company_email="ngModel" [(ngModel)]="service.formData.company_email">
+            </div>
+
+            <div class="grid-2">
+                <div class="block-edit-profile">
+                    <label for="">Contraseña</label>
+                    <input id="clave_empresa" type="password" name="company_password" #company_password="ngModel" [(ngModel)]="service.formData.company_password">
+                </div>
+
+                <div class="block-edit-profile">
+                    <label for="">Confirmar contraseña</label>
+                    <input id="clave_confirmar" type="password">
+                </div>
+            </div>
+
+            <div class="block-edit-profile">
+                <button class="btn primary btn-pd-t" no-border>Guardar</button> | 
+                <button type="reset" class="btn btn-ghostly btn-pd-t" transparent warning>Resetear</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="secondary-edit">
+
+    </div>
+</div>

@@ -11,8 +11,10 @@ export class ProfileService {
 
   readonly AdvertisementsURL = 'http://localhost:47474/api/Advertisements';
   readonly JornadasURL = 'http://localhost:47474/api/Jornadas';
+
   list: Advertisements[];
   jornadas: Jornadas[];
+
   formData:Advertisements = new Advertisements();
   
   obtenerAnunciosPorCuenta(id:string) {

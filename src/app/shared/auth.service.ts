@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-import { clear } from 'console';
 import Swal from 'sweetalert2';
 
 @Injectable({
@@ -61,7 +60,6 @@ export class AuthService implements OnInit {
   }
 
   UserStorage(lista:any) {
-    
     localStorage.setItem('correo', lista[0].user_email);
     localStorage.setItem('nombre', lista[0].user_name);
     localStorage.setItem('edad', lista[0].user_age);

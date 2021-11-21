@@ -19,7 +19,7 @@ app-navbar {
 
 app-navbar, app-login, app-suscripciones, app-footer, app-profesional-suscription,
 app-customer-suscription, app-home, app-portal, app-company-suscription,
-app-navbar-premium, app-profile {
+app-navbar-premium, app-profile, app-edit {
     width: 100%;
 }
 
@@ -60,6 +60,7 @@ html, body {
     --yellow-clear: #ffff80;
     --shadow-gray-clear: #a6a6a6;
     --blue-clear: #3472a8;
+    --red-clear: #f84e3f;
 }
 
 body {

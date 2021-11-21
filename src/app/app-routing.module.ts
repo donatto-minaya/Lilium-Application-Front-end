@@ -8,10 +8,12 @@ import { PortalComponent } from './portal/portal.component';
 import { ProfesionalSuscriptionComponent } from './profesional-suscription/profesional-suscription.component';
 import {AuthGuard} from './auth.guard'
 import { ProfileComponent } from './profile/profile.component';
+import { EditComponent } from './profile/edit/edit.component';
 
 const routes : Routes = [
   {path:'portal', component: PortalComponent, canActivate: [AuthGuard]},
   {path:'profile', component: ProfileComponent, canActivate: [AuthGuard]},
+  {path:'profile/edit', component: EditComponent, canActivate: [AuthGuard]},
   {path:'login', component: LoginComponent},
   {path:'company', component: CompanySuscriptionComponent},
   {path:'customer', component: CustomerSuscriptionComponent},

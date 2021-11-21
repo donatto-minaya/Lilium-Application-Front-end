@@ -48,8 +48,6 @@ export class CustomerSuscriptionComponent implements OnInit {
 
       (<HTMLInputElement>document.getElementById("nombre")).value = "";
       (<HTMLInputElement>document.getElementById("apellido")).value = "";
-      (<HTMLInputElement>document.getElementById("edad")).value = "";
-      (<HTMLInputElement>document.getElementById("telefono")).value = "";
       (<HTMLInputElement>document.getElementById("correo")).value = "";
       (<HTMLInputElement>document.getElementById("clave")).value = "";
     }    
@@ -61,7 +59,7 @@ export class CustomerSuscriptionComponent implements OnInit {
   onSubmit(form:NgForm) {
     this.service.postCustomer().subscribe(
       res => {
-        console.log(res);
+        null
       },
       err => {
         console.log(err);
