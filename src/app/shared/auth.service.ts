@@ -22,9 +22,7 @@ export class AuthService implements OnInit {
         if(lista.length > 0) {
           localStorage.setItem('logged', 'true')
 
-          if(lista[0].rol_id = '3'){
-            this.CompanyStorage(lista);
-          }
+          lista[0].rol_id != '3' ? this.UserStorage(lista): this.CompanyStorage(lista);  
 
           this.router.navigate(['/profile'])
         }
@@ -52,6 +50,7 @@ export class AuthService implements OnInit {
 
   CompanyStorage(lista:any) {
     localStorage.setItem('id', lista[0].company_id);
+    localStorage.setItem('rol_id', lista[0].rol_id);
     localStorage.setItem('correo', lista[0].company_email);
     localStorage.setItem('nombre', lista[0].company_name);
     localStorage.setItem('edad', lista[0].company_age);
@@ -60,6 +59,8 @@ export class AuthService implements OnInit {
   }
 
   UserStorage(lista:any) {
+    localStorage.setItem('id', lista[0].user_id);
+    localStorage.setItem('rol_id', lista[0].rol_id);
     localStorage.setItem('correo', lista[0].user_email);
     localStorage.setItem('nombre', lista[0].user_name);
     localStorage.setItem('edad', lista[0].user_age);

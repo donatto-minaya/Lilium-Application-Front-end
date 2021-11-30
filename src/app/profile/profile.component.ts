@@ -13,15 +13,21 @@ export class ProfileComponent implements OnInit {
   user = {
     id: localStorage.getItem('id'),
     email: localStorage.getItem('correo'),
-    password: localStorage.getItem('clave')
+    password: localStorage.getItem('clave'),
+    rol_id: localStorage.getItem('rol_id')
   }
 
   constructor(public service: ProfileService) { }
   
   ngOnInit(): void {
-    this.service.obtenerJornadas();
-    this.service.obtenerAnunciosPorCuenta(JSON.stringify(JSON.parse(this.user.id || '{}')));
-    console.log(this.service.list);
+    if((localStorage.getItem('rol_id') || '') == '3') {
+      this.service.obtenerJornadas();
+      this.service.obtenerAnunciosPorCuenta(JSON.stringify(JSON.parse(this.user.id || '{}')));
+    }
+
+    else {
+      this.service.obtenerEmpresas();
+    }
   }
 
   onSubmit(form: NgForm) {

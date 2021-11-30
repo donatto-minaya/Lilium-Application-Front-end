@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Advertisements } from './advertisements.model';
 import { Jornadas } from './jornadas.model';
+import { CompanySuscription } from './company-suscription.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +12,11 @@ export class ProfileService {
 
   readonly AdvertisementsURL = 'http://localhost:47474/api/Advertisements';
   readonly JornadasURL = 'http://localhost:47474/api/Jornadas';
+  readonly EmpresasURL = 'http://localhost:47474/api/Company';
 
   list: Advertisements[];
   jornadas: Jornadas[];
+  empresas: CompanySuscription[];
 
   formData:Advertisements = new Advertisements();
   
@@ -23,6 +26,10 @@ export class ProfileService {
 
   obtenerJornadas() {
     this.http.get(this.JornadasURL).toPromise().then(res => this.jornadas = res as Jornadas[])
+  }
+
+  obtenerEmpresas() {
+    this.http.get(this.EmpresasURL).toPromise().then(res => this.empresas = res as CompanySuscription[])
   }
 
   postAnuncio() {

@@ -22,32 +22,40 @@
         </div>
         <button class="btn">Ver todos</button>
 
-        <div class="new-advertisement">
-            <form #form="ngForm" (submit)="onSubmit(form)">
-                <input type="hidden" name="company_id" #company_id="ngModel" [(ngModel)]="service.formData.company_id" >
-                <div class="block-form-advertisement">
-                    <label for="">Titulo del anuncio</label>
-                    <input maxlength="25" type="text" name="title" #title="ngModel" [(ngModel)]="service.formData.title">
-                </div>
-                
-                <div class="block-form-advertisement">
-                    <label for="">Descripción</label>
-                    <textarea rows="10" type="text" name="description" #description="ngModel" [(ngModel)]="service.formData.description"></textarea>
-                </div>
+        <ng-container *ngIf="user.rol_id == '3'; else default">
+            <div class="new-advertisement">
+                <form #form="ngForm" (submit)="onSubmit(form)">
+                    <input type="hidden" name="company_id" #company_id="ngModel" [(ngModel)]="service.formData.company_id" >
+                    <div class="block-form-advertisement">
+                        <label for="">Titulo del anuncio</label>
+                        <input maxlength="25" type="text" name="title" #title="ngModel" [(ngModel)]="service.formData.title">
+                    </div>
+                    
+                    <div class="block-form-advertisement">
+                        <label for="">Descripción</label>
+                        <textarea rows="10" type="text" name="description" #description="ngModel" [(ngModel)]="service.formData.description"></textarea>
+                    </div>
+    
+                    <div class="block-form-advertisement">
+                        <label for="">Jornada</label>
+                        <select name="jornada" #tipoJornadaId="ngModel" [(ngModel)]="service.formData.tipoJornadaId">
+                            <option disabled [ngValue]="undefined">Tipo de Jornada</option>
+                            <option *ngFor="let jornada of service.jornadas" [ngValue]="jornada.tipoJornadaId">{{jornada.jornada}}</option>
+                        </select>
+                    </div>
+                    
+                    <div class="block-form-advertisement">
+                        <button type="submit" class="btn btn-wm btn-pd-t btn-ghostly" transparent>Agregar</button>
+                    </div>
+                 </form>
+            </div>
+        </ng-container>
+        <ng-template #default>
+            <div class="top-empresa" *ngFor="let empresa of service.empresas">
+                <p>{{ empresa.company_name }}</p>
+            </div>
+        </ng-template>
 
-                <div class="block-form-advertisement">
-                    <label for="">Jornada</label>
-                    <select name="jornada" #tipoJornadaId="ngModel" [(ngModel)]="service.formData.tipoJornadaId">
-                        <option disabled [ngValue]="undefined">Tipo de Jornada</option>
-                        <option *ngFor="let jornada of service.jornadas" [ngValue]="jornada.tipoJornadaId">{{jornada.jornada}}</option>
-                    </select>
-                </div>
-                
-                <div class="block-form-advertisement">
-                    <button type="submit" class="btn btn-wm btn-pd-t btn-ghostly" transparent>Agregar</button>
-                </div>
-             </form>
-        </div>
 
     </div>
 </div>
