@@ -62,11 +62,10 @@
     background-color: var(--blue-dark);
 }
 
-.btn.warning {
-
+.btn.primary:active {
+    background-color: #8587fa;
 }
 
-.btn.danger {
-    color: white;
-    background-color: var(--default-red);
+.btn.warning {
+
 }

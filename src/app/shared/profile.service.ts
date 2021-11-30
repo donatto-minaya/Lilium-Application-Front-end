@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Advertisements } from './advertisements.model';
 import { Jornadas } from './jornadas.model';
 import { CompanySuscription } from './company-suscription.model';
+import { Tasks } from './tasks.model';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +14,15 @@ export class ProfileService {
   readonly AdvertisementsURL = 'http://localhost:47474/api/Advertisements';
   readonly JornadasURL = 'http://localhost:47474/api/Jornadas';
   readonly EmpresasURL = 'http://localhost:47474/api/Company';
+  readonly ActividadesURL = 'http://localhost:47474/api/Task';
 
   list: Advertisements[];
   jornadas: Jornadas[];
   empresas: CompanySuscription[];
+  actividades: Tasks[];
 
   formData:Advertisements = new Advertisements();
+  data2:Tasks = new Tasks();
   
   obtenerAnunciosPorCuenta(id:string) {
     this.http.get(`${this.AdvertisementsURL}/${id}`).toPromise().then(res => this.list = res as Advertisements[])
@@ -32,8 +36,16 @@ export class ProfileService {
     this.http.get(this.EmpresasURL).toPromise().then(res => this.empresas = res as CompanySuscription[])
   }
 
+  obtenerActividadesPorEmpresa(id:string) {
+    this.http.get(`${this.ActividadesURL}/${id}`).toPromise().then(res => this.actividades = res as Tasks[]);
+  }
+
   postAnuncio() {
     return this.http.post(this.AdvertisementsURL, this.formData);    
+  }
+
+  postActividad() {
+    return this.http.post(this.ActividadesURL, this.data2);    
   }
 
   eliminarAnuncio(id:string) {
@@ -42,6 +54,16 @@ export class ProfileService {
     })
     .then(res => {
       this.obtenerAnunciosPorCuenta(JSON.stringify(JSON.parse(localStorage.getItem('id') || '{}')));
+    })
+    .then(res => null)
+  }
+
+  completarActividad(id:number) {
+    fetch(`${this.ActividadesURL}/${id}`, {
+      method: 'PUT'
+    })
+    .then(res => {
+      this.obtenerActividadesPorEmpresa(JSON.stringify(JSON.parse(localStorage.getItem('id') || '{}')));
     })
     .then(res => null)
   }

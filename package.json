@@ -25,6 +25,7 @@
     "cors": "^2.8.5",
     "ionicons": "^5.5.3",
     "jsonwebtoken": "^8.5.1",
+    "ngx-toastr": "^14.2.1",
     "node-polyfill-webpack-plugin": "^1.1.4",
     "rxjs": "~6.6.0",
     "stream-browserify": "^3.0.0",

@@ -19,6 +19,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import {AuthGuard} from './auth.guard';
 import { ProfileComponent } from './profile/profile.component';
 import { EditComponent } from './profile/edit/edit.component';
+import{ BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
@@ -43,6 +45,8 @@ import { EditComponent } from './profile/edit/edit.component';
     HttpClientModule,
     FontAwesomeModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
 
   providers: [AuthGuard],

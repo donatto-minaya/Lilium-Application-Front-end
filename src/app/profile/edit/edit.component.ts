@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { CompanySuscriptionService } from '../../shared/company-suscription.service';
 import Swal from 'sweetalert2';
+import { AuthService } from 'src/app/shared/auth.service';
 
 @Component({
   selector: 'app-edit',
@@ -10,7 +11,7 @@ import Swal from 'sweetalert2';
 })
 export class EditComponent implements OnInit {
 
-  constructor(public service: CompanySuscriptionService) {
+  constructor(public service: CompanySuscriptionService, public auth: AuthService) {
   }
 
   ngOnInit(): void {

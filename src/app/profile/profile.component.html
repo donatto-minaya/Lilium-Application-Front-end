@@ -1,3 +1,12 @@
+<div id="modal">
+    <form action="" #form="ngForm" (submit)="nuevaActividad(form)">
+        <input type="hidden" name="company_id" #company_id="ngModel" [(ngModel)]="service.data2.company_id" >
+        <input placeholder="Coloca la actividad a realizar" id="titulo" type="text" name="title" #title="ngModel" [(ngModel)]="service.data2.title">
+        <button id="modal-button">Enviar</button>
+    </form>
+</div>
+
+
 <div id="content-profile">
     <div id="profile-description">
         <div class="tip">
@@ -8,7 +17,25 @@
     </div>
     
     <div id="business-description">
-    
+        <div class="task">
+            <div class="actions">
+                <button class="btn primary">Nuevo</button> | 
+                <button class="btn btn-ghostly" transparent>Actividades Completadas</button> | 
+                <button class="btn btn-ghostly" transparent warning>Vaciar todo</button>
+            </div>
+
+            <div class="actividad" *ngFor="let task of service.actividades">
+                <div class="cabecera">
+                    <p>{{ task.title }}</p>
+                    <ng-container *ngIf="task.fechaInicio == data.fecha">
+                        <span class="tag-new">Nuevo</span>
+                    </ng-container>
+                    <div class="images-actions">
+                        <img (click)="completarActividad(task.task_id)" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Yes_Check_Circle.svg/2048px-Yes_Check_Circle.svg.png"/>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     
     <div id="advertisements">
@@ -16,8 +43,10 @@
             <div class="ad" *ngFor="let job of service.list">
                 <p>{{ job.title }}</p>
                 <p>{{ job.description }}</p>                  
-                <button class="btn">Editar</button>
-                <button class="btn" (click)="eliminarAnuncio(job.jobId)">Eliminar</button>
+                <ng-container *ngIf="job.title != null">
+                    <button class="btn">Editar</button>
+                    <button class="btn btn-ghostly" (click)="eliminarAnuncio(job.jobId)" transparent warning>Eliminar</button>
+                </ng-container>
             </div>
         </div>
         <button class="btn">Ver todos</button>

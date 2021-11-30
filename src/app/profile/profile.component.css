@@ -6,18 +6,23 @@
 }
 
 #business-description {
-    width: 40%;
+    border-radius: 8px;
+    width: 50%;
+    background-color: var(--white-clear);
+    height: 300px;
+    margin: 1em 2em;
+    box-shadow: 0 0 7px var(--default-shadow-gray);
 }
 
 #advertisements, #profile-description {
     width: 25%;
 }
 
-#content-profile > div > div {
+#profile-description .tip, #advertisements > div {
+    box-shadow: 0 0 7px var(--default-shadow-gray);
     border-radius: 8px;
     margin: 1em 0;
     background-color: var(--white-clear);
-    box-shadow: 0 0 7px var(--default-shadow-gray);
 }
 
 .new-advertisement form {
@@ -53,4 +58,50 @@ form select:focus {
 
 form select {
     width: 100%;
+}
+
+.actions {
+    border-radius: 8px 8px 0 0;
+    background-color: var(--default-orange);
+    padding: 1em;
+}
+
+.images-actions img {
+    width:20px !important;
+    pointer-events: all;
+    transition: transform .2s, filter .2s;
+    filter: invert(20%);
+}
+
+.images-actions img:hover {
+    cursor: pointer;
+    transform: scale(1.2, 1.2);filter: invert(0%);
+}
+
+
+.actividad {
+    width: 90%;
+    margin: 15px auto;
+}
+
+.cabecera {
+    font-weight: bold;
+    width: 90%;
+    display: flex;
+    align-items: center;
+}
+
+.cabecera .tag-new, .cabecera .tag-urgente {
+    margin: 0 10px;
+    color: white;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.tag-new {
+    background-color: var(--red-clear);
+}
+
+.tag-urgente {
+    background-color: var(--crimson-red);
 }

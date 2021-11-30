@@ -45,8 +45,8 @@ html, body {
     --default-black: #404040;
     --default-blue: #1B3C59;
     --default-green: #9bd4ae;
-    --default-orange: #F2D5BB;
-    --default-yellow: #F0F0A8;
+    --default-orange: #fce5cf;
+    --default-yellow: #f8f8ba;
     --default-pink: #F2A999;
     --default-red: #F28177;
     --default-shadow-gray: #d9d9d9;
@@ -60,7 +60,11 @@ html, body {
     --yellow-clear: #ffff80;
     --shadow-gray-clear: #a6a6a6;
     --blue-clear: #3472a8;
-    --red-clear: #f84e3f;
+    --red-clear: #f6210e;
+}
+
+:root {
+    --crimson-red: #991206;
 }
 
 body {
