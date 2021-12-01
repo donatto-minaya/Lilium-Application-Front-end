@@ -67,5 +67,15 @@ export class ProfileService {
     })
     .then(res => null)
   }
+
+  vaciarActividadesEmpresa(id:string) {
+    fetch(`${this.ActividadesURL}/${id}`, {
+      method: 'DELETE'
+    })
+    .then(res => {
+      this.obtenerActividadesPorEmpresa(JSON.stringify(JSON.parse(localStorage.getItem('id') || '{}')));
+    })
+    .then(res => null)
+  }
 }
 

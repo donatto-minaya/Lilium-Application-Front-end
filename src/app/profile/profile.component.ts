@@ -13,14 +13,15 @@ import { ToastrService } from 'ngx-toastr';
 export class ProfileComponent implements OnInit {
 
   user = {
-    id: localStorage.getItem('id'),
+    id: localStorage.getItem('id') || '',
     email: localStorage.getItem('correo'),
     password: localStorage.getItem('clave'),
     rol_id: localStorage.getItem('rol_id')
   }
 
   data = {
-    fecha : new Date().toJSON().slice(0,10).replace(/-/g,'-')
+    //fecha : new Date().toJSON().slice(0,10).replace(/-/g,'-')
+    fecha: new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate()
   }
 
   constructor(public service: ProfileService, private toastr: ToastrService) { }
@@ -72,5 +73,27 @@ export class ProfileComponent implements OnInit {
   completarActividad(id:number) {
     this.service.completarActividad(id);
     this.toastr.success('Se ha completado una actividad', 'Actividades')
+  }
+
+  vaciarActividadesEmpresa(id:string) {
+    if(this.service.actividades.length == 0) {
+      this.toastr.warning('No tienes actividades', 'Advertencia');
+    }
+    
+    else {
+      Swal.fire({
+        icon: 'warning',
+        title: 'Estás seguro?',
+        text: 'Esta acción eliminará todas las actividades actuales',
+        confirmButtonText: 'Si, eliminalos!',
+        showCancelButton: true,
+        cancelButtonText: 'No quería hacer eso'
+      }).then((result) => {
+        if(result.isConfirmed) {
+          this.service.vaciarActividadesEmpresa(id);
+          this.toastr.warning('Has ejecutado una acción irreversible', 'Advertencia');
+        }
+      })
+    }
   }
 }

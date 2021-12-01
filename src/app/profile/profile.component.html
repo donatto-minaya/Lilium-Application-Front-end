@@ -1,12 +1,3 @@
-<div id="modal">
-    <form action="" #form="ngForm" (submit)="nuevaActividad(form)">
-        <input type="hidden" name="company_id" #company_id="ngModel" [(ngModel)]="service.data2.company_id" >
-        <input placeholder="Coloca la actividad a realizar" id="titulo" type="text" name="title" #title="ngModel" [(ngModel)]="service.data2.title">
-        <button id="modal-button">Enviar</button>
-    </form>
-</div>
-
-
 <div id="content-profile">
     <div id="profile-description">
         <div class="tip">
@@ -21,8 +12,13 @@
             <div class="actions">
                 <button class="btn primary">Nuevo</button> | 
                 <button class="btn btn-ghostly" transparent>Actividades Completadas</button> | 
-                <button class="btn btn-ghostly" transparent warning>Vaciar todo</button>
+                <button (click)="vaciarActividadesEmpresa(user.id)" class="btn btn-ghostly" transparent warning>Vaciar todo</button>
             </div>
+            <form action="" #form="ngForm" (submit)="nuevaActividad(form)">
+                <input type="hidden" name="company_id" #company_id="ngModel" [(ngModel)]="service.data2.company_id" >
+                <input placeholder="Coloca la actividad a realizar" id="titulo" type="text" name="title" #title="ngModel" [(ngModel)]="service.data2.title">
+                <button id="modal-button" class="btn">Enviar</button>
+            </form>
 
             <div class="actividad" *ngFor="let task of service.actividades">
                 <div class="cabecera">
@@ -31,7 +27,7 @@
                         <span class="tag-new">Nuevo</span>
                     </ng-container>
                     <div class="images-actions">
-                        <img (click)="completarActividad(task.task_id)" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Yes_Check_Circle.svg/2048px-Yes_Check_Circle.svg.png"/>
+                        <img (click)="completarActividad(task.task_id)" src="assets/image/check.png"/>
                     </div>
                 </div>
             </div>
