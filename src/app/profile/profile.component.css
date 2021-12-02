@@ -77,9 +77,21 @@ form select {
     transform: scale(1.2, 1.2);filter: invert(0%);
 }
 
+#actividades {
+    display: flex;
+}
+
+#actividades > div {
+    width: 50%;
+}
+
 .actividad {
     width: 90%;
     margin: 15px auto;
+}
+
+#incompletas {
+    margin: 1em;
 }
 
 .cabecera {
@@ -102,4 +114,15 @@ form select {
 
 .tag-urgente {
     background-color: var(--crimson-red);
+}
+
+#completas {
+    border-radius: 8px 0 0 8px;
+    background-color: var(--default-green);
+    min-height: 200px;
+}
+
+.completa {
+    font-weight: bold;
+    margin: 0 1em;
 }

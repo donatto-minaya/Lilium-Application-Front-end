@@ -20,6 +20,7 @@ export class ProfileService {
   jornadas: Jornadas[];
   empresas: CompanySuscription[];
   actividades: Tasks[];
+  actividadesCompletas: Tasks[];
 
   formData:Advertisements = new Advertisements();
   data2:Tasks = new Tasks();
@@ -37,7 +38,11 @@ export class ProfileService {
   }
 
   obtenerActividadesPorEmpresa(id:string) {
-    this.http.get(`${this.ActividadesURL}/${id}`).toPromise().then(res => this.actividades = res as Tasks[]);
+    this.http.get(`${this.ActividadesURL}?id=${id}`).toPromise().then(res => this.actividades = res as Tasks[]);
+  }
+
+  obtenerActividadesCompletasPorEmpresa(id:string) {
+    this.http.get(`${this.ActividadesURL}/completas?id=${id}`).toPromise().then(res => this.actividadesCompletas = res as Tasks[]);
   }
 
   postAnuncio() {
@@ -57,19 +62,20 @@ export class ProfileService {
     })
     .then(res => null)
   }
-
+  
   completarActividad(id:number) {
     fetch(`${this.ActividadesURL}/${id}`, {
       method: 'PUT'
     })
     .then(res => {
       this.obtenerActividadesPorEmpresa(JSON.stringify(JSON.parse(localStorage.getItem('id') || '{}')));
+      this.obtenerActividadesCompletasPorEmpresa(JSON.stringify(JSON.parse(localStorage.getItem('id') || '{}')));
     })
     .then(res => null)
   }
 
   vaciarActividadesEmpresa(id:string) {
-    fetch(`${this.ActividadesURL}/${id}`, {
+    fetch(`${this.ActividadesURL}?id=${id}`, {
       method: 'DELETE'
     })
     .then(res => {
@@ -77,5 +83,17 @@ export class ProfileService {
     })
     .then(res => null)
   }
+
+  vaciarActividadesCompletasEmpresa(id:string) {
+    fetch(`${this.ActividadesURL}/completas?id=${id}`, {
+      method: 'DELETE'
+    })
+    .then(res => {
+      this.obtenerAnunciosPorCuenta(JSON.stringify(JSON.parse(localStorage.getItem('id') || '{}')));
+      this.obtenerActividadesCompletasPorEmpresa(JSON.stringify(JSON.parse(localStorage.getItem('id') || '{}')));
+    })
+    .then(res => null)
+  }
+
 }
 

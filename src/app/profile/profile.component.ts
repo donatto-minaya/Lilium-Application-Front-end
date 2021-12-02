@@ -19,17 +19,22 @@ export class ProfileComponent implements OnInit {
     rol_id: localStorage.getItem('rol_id')
   }
 
+  dia = {
+    date: new Date().getDate().toString()
+  }
+
   data = {
-    //fecha : new Date().toJSON().slice(0,10).replace(/-/g,'-')
-    fecha: new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + new Date().getDate()
+    fecha: new Date().getFullYear() + '-' + (new Date().getMonth() + 1) + '-' + ((this.dia.date.length > 1) ? this.dia.date : '0' + this.dia.date)
   }
 
   constructor(public service: ProfileService, private toastr: ToastrService) { }
   
   ngOnInit(): void {
+    console.log(this.data.fecha)
     if((localStorage.getItem('rol_id') || '') == '3') {
       this.service.obtenerJornadas();
       this.service.obtenerActividadesPorEmpresa(this.user.id || '');
+      this.service.obtenerActividadesCompletasPorEmpresa(this.user.id || '');
       this.service.obtenerAnunciosPorCuenta(JSON.stringify(JSON.parse(this.user.id || '{}')));
     }
 
@@ -72,7 +77,29 @@ export class ProfileComponent implements OnInit {
 
   completarActividad(id:number) {
     this.service.completarActividad(id);
+    this.service.obtenerActividadesCompletasPorEmpresa(this.user.id)
     this.toastr.success('Se ha completado una actividad', 'Actividades')
+  }
+
+  vaciarActividadesCompletasEmpresa(id:string) {
+    if(this.service.actividadesCompletas.length == 0) {
+      this.toastr.warning('No tienes actividades', 'Advertencia');
+    }
+    
+    else {
+      Swal.fire({
+        icon: 'question',
+        title: 'Estás seguro?',
+        text: 'Estás a punto de limpiar las actividades que has terminado',
+        confirmButtonText: 'Si, limpialo!',
+        showCancelButton: true,
+      }).then((result) => {
+        if(result.isConfirmed) {
+          this.service.vaciarActividadesCompletasEmpresa(id);
+          this.toastr.success('Se han limpiado las actividades', 'Exito')
+        }
+      }) 
+    }
   }
 
   vaciarActividadesEmpresa(id:string) {
