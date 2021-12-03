@@ -3,7 +3,7 @@ import Swal from 'sweetalert2';
 import { NgForm } from '@angular/forms';
 import { ProfileService } from '../shared/profile.service';
 import { ToastrService } from 'ngx-toastr';
-
+import { faAddressCard, faLock, faPhone, faPortrait, faUser } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-profile',
@@ -11,12 +11,19 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  faPortrait = faPortrait;
+  faPhone = faPhone;
+  faUser = faUser;
+  faAddressCard = faAddressCard;
+  faLock = faLock;
 
   user = {
+    nombre: localStorage.getItem('nombre'),
     id: localStorage.getItem('id') || '',
     email: localStorage.getItem('correo'),
     password: localStorage.getItem('clave'),
-    rol_id: localStorage.getItem('rol_id')
+    rol_id: localStorage.getItem('rol_id'),
+    telefono: localStorage.getItem('telefono')
   }
 
   dia = {

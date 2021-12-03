@@ -126,3 +126,17 @@ form select {
     font-weight: bold;
     margin: 0 1em;
 }
+
+#perfil {
+    margin: 1em;
+    padding: 1em 1em 2em;
+}
+
+#nombre {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#perfil p fa-icon {
+    color: var(--default-blue);
+}

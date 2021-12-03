@@ -1,9 +1,12 @@
 <div id="content-profile">
     <div id="profile-description">
         <div class="tip">
-            Puedes contactar a este usuario con este correo
-            <p>{{ user.email }}</p>
-            <button class="btn btn-wm btn-pd-t" routerLink="/profile/edit">Configuración</button>
+            <div id="perfil">
+                <p id="nombre">{{ user.nombre }}</p>
+                <p id="telefono"><fa-icon [icon]="faPhone"></fa-icon> {{ user.telefono }}</p>
+                <p id="correo"><fa-icon [icon]="faAddressCard"></fa-icon> {{ user.email }}</p>
+                <button class="btn btn-wm btn-pd-t btn-ghostly" routerLink="/profile/edit" transparent>Editar</button>
+            </div>
         </div>
     </div>
     
@@ -51,12 +54,12 @@
                 <p>{{ job.title }}</p>
                 <p>{{ job.description }}</p>                  
                 <ng-container *ngIf="job.title != null">
-                    <button class="btn">Editar</button>
+                    <!-- <button class="btn">Editar</button> -->
                     <button class="btn btn-ghostly" (click)="eliminarAnuncio(job.jobId)" transparent warning>Eliminar</button>
                 </ng-container>
             </div>
         </div>
-        <button class="btn">Ver todos</button>
+        <!-- <button class="btn">Ver todos</button> -->
 
         <ng-container *ngIf="user.rol_id == '3'; else default">
             <div class="new-advertisement">
