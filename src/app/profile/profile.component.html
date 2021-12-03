@@ -12,14 +12,14 @@
     
     <div id="business-description">
         <div class="task">
-            <div class="actions">
-                <button class="btn primary">Nuevo</button> | 
-                <button (click)="vaciarActividadesEmpresa(user.id)" class="btn btn-ghostly" transparent warning>Vaciar todo</button>
-            </div>
             <form action="" #form="ngForm" (submit)="nuevaActividad(form)">
+                <div class="actions">
+                    <button type="submit" class="btn primary">Nuevo</button> | 
+                    <button type="button" (click)="vaciarActividadesEmpresa(user.id)" class="btn btn-ghostly" transparent warning>Vaciar todo</button>
+                </div>
+
                 <input type="hidden" name="company_id" #company_id="ngModel" [(ngModel)]="service.data2.company_id" >
                 <input placeholder="Coloca la actividad a realizar" id="titulo" type="text" name="title" #title="ngModel" [(ngModel)]="service.data2.title">
-                <button id="modal-button" class="btn">Enviar</button>
             </form>
 
             <div id="actividades">
@@ -67,12 +67,12 @@
                     <input type="hidden" name="company_id" #company_id="ngModel" [(ngModel)]="service.formData.company_id" >
                     <div class="block-form-advertisement">
                         <label for="">Titulo del anuncio</label>
-                        <input maxlength="25" type="text" name="title" #title="ngModel" [(ngModel)]="service.formData.title">
+                        <input placeholder="Ej: Se Solicita Repostero" maxlength="25" type="text" name="title" #title="ngModel" [(ngModel)]="service.formData.title">
                     </div>
                     
                     <div class="block-form-advertisement">
                         <label for="">Descripción</label>
-                        <textarea rows="10" type="text" name="description" #description="ngModel" [(ngModel)]="service.formData.description"></textarea>
+                        <textarea placeholder="Ej: Se busca repostero con 2 años..." rows="10" type="text" name="description" #description="ngModel" [(ngModel)]="service.formData.description"></textarea>
                     </div>
     
                     <div class="block-form-advertisement">
