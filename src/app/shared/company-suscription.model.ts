@@ -5,10 +5,10 @@ export class CompanySuscription {
     company_name:string = localStorage.getItem('nombre') || "";
     company_time_open:number;
     company_time_close:number;
-    company_age:string = localStorage.getItem('edad') || "Edad"
+    company_age:string = localStorage.getItem('edad') || ""
     company_password:string = localStorage.getItem('clave') || "";
     company_email:string = localStorage.getItem('correo') || "";
     company_paypal_email:string;
     company_mastercard_email:string;
-    company_phone:string = localStorage.getItem('telefono') || "Telefono";
+    company_phone:string = localStorage.getItem('telefono') || "";
 }

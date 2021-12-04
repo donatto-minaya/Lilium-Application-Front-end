@@ -44,11 +44,9 @@ export class EditComponent implements OnInit {
     else {
       this.service.editarPerfil().subscribe(
         res => {
-          Swal.fire({
-            icon: 'success',
-            title: 'Guardado con éxito',
-            text: 'Los datos han sido cambiados correctamente'
-          })
+          var correo = (<HTMLInputElement>document.getElementById("correo_empresa")).value
+          var clave = (<HTMLInputElement>document.getElementById("clave_empresa")).value
+          this.auth.logear(correo, clave)
         },
         err => {
           console.log(err);

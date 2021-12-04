@@ -151,3 +151,34 @@ form select {
     margin: 1em auto;
     font-size: 16px;
 }
+
+#anuncios-staticos {
+    background-color: var(--white-clear);
+    border-radius: 8px;
+    min-height: 200px;
+}
+
+.anuncio-statico {
+    width: 100%;
+    margin: 1em;
+    padding: 10px;
+    display: flex;
+}
+
+.anuncio-statico .imagen-fondo {
+    width: 40%;
+}
+
+.imagen-fondo img {
+    border-radius: 20px 0 0 20px;
+}
+
+.anuncio-statico .descripcion {
+    width: 60%;
+    margin: 0 1em;
+}
+
+.descripcion .titulo {
+    font-weight: bold;
+    font-size: 20px;
+}

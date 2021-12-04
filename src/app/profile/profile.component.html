@@ -11,41 +11,56 @@
     </div>
     
     <div id="business-description">
-        <div class="task">
-            <form action="" #form="ngForm" (submit)="nuevaActividad(form)">
-                <div class="actions">
-                    <button type="submit" class="btn primary">Nuevo</button> | 
-                    <button type="button" (click)="vaciarActividadesEmpresa(user.id)" class="btn btn-ghostly" transparent warning>Vaciar todo</button>
-                </div>
-
-                <input type="hidden" name="company_id" #company_id="ngModel" [(ngModel)]="service.data2.company_id" >
-                <input placeholder="Coloca la actividad a realizar" id="titulo" type="text" name="title" #title="ngModel" [(ngModel)]="service.data2.title">
-            </form>
-
-            <div id="actividades">
-                <div id="incompletas" class="actividad" >
-                    <div *ngFor="let task of service.actividades">
-                        
-                        <div class="cabecera">
-                            <p>{{ task.title }}</p>
-                            <ng-container *ngIf="task.fechaInicio == data.fecha">
-                                <span class="tag-new">Nuevo</span>
-                            </ng-container>
-                            <div class="images-actions">
-                                <img (click)="completarActividad(task.task_id)" src="assets/image/check.png"/>
+        <ng-container *ngIf="user.rol_id == '3'; else static">
+            <div class="task">
+                <form action="" #form="ngForm" (submit)="nuevaActividad(form)">
+                    <div class="actions">
+                        <button type="submit" class="btn primary">Nuevo</button> | 
+                        <button type="button" (click)="vaciarActividadesEmpresa(user.id)" class="btn btn-ghostly" transparent warning>Vaciar todo</button>
+                    </div>
+    
+                    <input type="hidden" name="company_id" #company_id="ngModel" [(ngModel)]="service.data2.company_id" >
+                    <input placeholder="Coloca la actividad a realizar" id="titulo" type="text" name="title" #title="ngModel" [(ngModel)]="service.data2.title">
+                </form>
+    
+                <div id="actividades">
+                    <div id="incompletas" class="actividad" >
+                        <div *ngFor="let task of service.actividades">
+                            
+                            <div class="cabecera">
+                                <p>{{ task.title }}</p>
+                                <ng-container *ngIf="task.fechaInicio == data.fecha">
+                                    <span class="tag-new">Nuevo</span>
+                                </ng-container>
+                                <div class="images-actions">
+                                    <img (click)="completarActividad(task.task_id)" src="assets/image/check.png"/>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-
-                <div id="completas" class="actividad" >
-                    <div class="completa" *ngFor="let complete of service.actividadesCompletas">
-                        <p>{{ complete.title }}</p>
+    
+                    <div id="completas" class="actividad" >
+                        <div class="completa" *ngFor="let complete of service.actividadesCompletas">
+                            <p>{{ complete.title }}</p>
+                        </div>
+                        <button class="btn btn-ghostly btn-wm" transparent (click)="vaciarActividadesCompletasEmpresa(user.id)">Limpiar</button>
                     </div>
-                    <button class="btn btn-ghostly btn-wm" transparent (click)="vaciarActividadesCompletasEmpresa(user.id)">Limpiar</button>
                 </div>
             </div>
-        </div>
+        </ng-container>
+        <ng-template #static>
+            <div id="anuncios-staticos">
+                <div class="anuncio-statico">
+                    <div class="imagen-fondo">
+                        <img src="https://cadenaser.com/ser/imagenes/2021/12/02/gastro/1638440529_216008_1638441171_miniatura_normal.jpg"/>
+                    </div>
+                    <div class="descripcion">
+                        <div class="titulo">Vivian crea un nuevo platillo!</div>
+                    </div>
+                </div>
+            </div>
+        </ng-template>
+        
     </div>
     
     <div id="advertisements">
